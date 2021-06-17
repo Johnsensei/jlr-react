@@ -15,10 +15,9 @@ class App extends Component {
   render() {
       return (
           <div className="App">
-              <Navbar dark color="#B9936D">
+              <Navbar dark className="navbar">
               <div className="container">
-                {/* TODO: Replace with logo image. */}
-                  <NavbarBrand href="/">Japanese Language Room</NavbarBrand>
+                  <img src="/assets/images/JLR_Horz.png" />
               </div>
               </Navbar>
               <Directory classes={this.state.classes} />

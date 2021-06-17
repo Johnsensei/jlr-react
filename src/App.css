@@ -1,14 +1,26 @@
-/* TODO: set additional color sets and fonts per Javin's mockups. */
+/* TODO: set fonts per Javin's mockups. */
 
 .navbar{
+  /*Colorset 1*/
+  /* background: #556D53; */
+
   /* Colorset 2 */
   background: #B9936D;
+
+  /*Colorset 3*/
+  /* background: #2E2F46; */
 }
 
 body {
   font-family: "Open Sans", sans-serif;
+  /*Colorset 1*/
+  /* background: #E7ECF2; */
+
   /* Colorset 2 */
   background: #E6DFD7;
+
+  /*Colorset 3*/
+  /* background: #F4F4F6; */
 }
 
 .card-title {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
+import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle, CardColumns } from 'reactstrap';
 
 class Directory extends Component {
     constructor(props) {
@@ -21,6 +21,11 @@ class Directory extends Component {
                     <CardBody>
                         <CardTitle>{languageClass.name}</CardTitle>
                         <CardText>{languageClass.description}</CardText>
+                        <ul>
+                            {languageClass.content.map(function(listValue){
+                                return <li>{listValue}</li>
+                            })}
+                        </ul>
                     </CardBody>
                 </Card>
             );
