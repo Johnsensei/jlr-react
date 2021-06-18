@@ -17,7 +17,11 @@ class App extends Component {
           <div className="App">
               <Navbar dark className="navbar">
               <div className="container">
-                  <img src="/assets/images/JLR_Horz.png" />
+                <div className="row">
+                  <div className="col">
+                    <img src="/assets/images/JLR_Horz.png" className="img-fluid my-2"/>
+                  </div>
+                </div>
               </div>
               </Navbar>
               <Directory classes={this.state.classes} />
