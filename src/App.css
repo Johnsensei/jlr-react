@@ -1,4 +1,3 @@
-/* TODO: set fonts per Javin's mockups. */
 
 .navbar{
   /*Colorset 1*/
@@ -24,7 +23,9 @@ body {
 }
 
 .card-title {
-  font: 500 1.25rem "Lobster", cursive;
+  font: 500 1.25rem "AdelonBold";
+  text-align: center;
+  
 }
 
 .card-img-overlay .card-title {
