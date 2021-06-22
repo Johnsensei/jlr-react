@@ -1,15 +1,4 @@
 
-.navbar{
-  /*Colorset 1*/
-  /* background: #556D53; */
-
-  /* Colorset 2 */
-  background: #B9936D;
-
-  /*Colorset 3*/
-  /* background: #2E2F46; */
-}
-
 body {
   font-family: "Open Sans", sans-serif;
   /*Colorset 1*/
@@ -22,13 +11,49 @@ body {
   /* background: #F4F4F6; */
 }
 
+h1, h2, h3, .card-body>.card-title {
+  font-family: "AdelonBold";
+}
+
 .card-title {
   font: 500 1.25rem "AdelonBold";
   text-align: center;
-  
 }
 
 .card-img-overlay .card-title {
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.row-content{
+  padding: 50px 0;
+  border-bottom: 1px ridge;
+  min-height: 200px;
+}
+
+.site-footer {
+  background: #B9936D;
+  padding: 20px 0;
+}
+
+.jumbotron {
+  margin: 0;
+  padding: 30px;
+  background: #B9936D;
+  color: white;
+}
+
+.jumbotron h2 {
+  color: #CEC8FF;
+}
+
+.navbar{
+  /*Colorset 1*/
+  /* background: #556D53; */
+
+  /* Colorset 2 */
+  background: #7A5C4A;
+
+  /*Colorset 3*/
+  /* background: #2E2F46; */
 }
