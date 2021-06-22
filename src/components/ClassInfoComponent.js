@@ -1,16 +1,23 @@
 import React from "react";
-import { Card, CardImg, CardText, CardBody, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 function RenderClass({languageClass}){
     return(
-        <div className="col-md-5 m-1">
+        <div key={languageClass.id} className="col-md-5 m-1">
             <Card>
-                <CardImg top src={languageClass.image} alt={languageClass.name} />
-                <CardBody>
-                    <CardText>{languageClass.description}</CardText>
-                </CardBody>
-            </Card>
+                {/* TODO: This Card Image is broken for some reason. Tried adding the key to the div. */}
+                {/* <CardImg width="100%" src={languageClass.image} alt={languageClass.name} /> */}
+                   <CardBody>
+                        <CardTitle>{languageClass.name}</CardTitle>
+                        <CardText>{languageClass.description}</CardText>
+                       <ul>
+                             {languageClass.content.map(function(listValue){
+                                return <li>{listValue}</li>
+                            })}
+                        </ul>
+                    </CardBody>
+                </Card>
         </div>
     );
 }
@@ -39,18 +46,6 @@ function ClassInfo(props){
     if(props.languageClass){
         return (
         <div className="container">
-            {/* I don't want breadcrumbs. */}
-            {/* <div className="row">
-                <div className="col">
-                    <Breadcrumb>
-                        <BreadcrumbItem><Link to="/directory">Directory</Link></BreadcrumbItem>
-                        <BreadcrumbItem active>{props.campsite.name}</BreadcrumbItem>
-                    </Breadcrumb>
-                    <h2>{props.campsite.name}</h2>
-                    <hr />
-                </div>
-            </div> */}
-
             <div className="row">
                 <RenderClass languageClass={props.languageClass} />
                 <RenderPrereqs prerequisites={props.prerequisites} />
@@ -58,7 +53,7 @@ function ClassInfo(props){
         </div>
         );
     }
-    else {return (<div />);}
+    return <div />
 }
 
-export default CampsiteInfo;
+export default ClassInfo;

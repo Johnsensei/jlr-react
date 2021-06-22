@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Directory from './DirectoryComponent';
-import CampsiteInfo from './CampsiteInfoComponent';
+import ClassInfo from './ClassInfoComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Home from './HomeComponent';
+import Apps from './AppsComponent'
 import Contact from './ContactComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { LANGUAGECLASSES } from '../shared/languageclasses';
@@ -51,6 +52,8 @@ class Main extends Component{
                     <Route path="/home" component={HomePage}/>
                     <Route exact path="/languageclasses" render = {() => <Directory languageClasses={this.state.languageClasses} />} />
                     <Route path="/languageclasses/:classId" component={ClassWithId} />
+                    {/* <Route exact path="/apps" component={Apps} /> */}
+                    {/* TODO: Add route for videos. Get Apps and Videos running and error-free. */}
                     <Route exact path="/contactus" component={Contact} />
                     <Redirect to="/home" />
                 </Switch>

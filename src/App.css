@@ -1,4 +1,15 @@
 
+.navbar{
+  /*Colorset 1*/
+  /* background: #556D53; */
+
+  /* Colorset 2 */
+  background: #7A5C4A;
+
+  /*Colorset 3*/
+  /* background: #2E2F46; */
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   /*Colorset 1*/
@@ -45,15 +56,4 @@ h1, h2, h3, .card-body>.card-title {
 
 .jumbotron h2 {
   color: #CEC8FF;
-}
-
-.navbar{
-  /*Colorset 1*/
-  /* background: #556D53; */
-
-  /* Colorset 2 */
-  background: #7A5C4A;
-
-  /*Colorset 3*/
-  /* background: #2E2F46; */
 }
