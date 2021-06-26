@@ -6,8 +6,7 @@ function RenderClass({languageClass}){
     return(
         <div key={languageClass.id} className="col-md-5 m-1">
             <Card>
-                {/* TODO: This Card Image is broken for some reason. Tried adding the key to the div. */}
-                {/* <CardImg width="100%" src={languageClass.image} alt={languageClass.name} /> */}
+                <CardImg src={languageClass.image} alt={languageClass.name} />
                    <CardBody>
                         <CardTitle>{languageClass.name}</CardTitle>
                         <CardText>{languageClass.description}</CardText>

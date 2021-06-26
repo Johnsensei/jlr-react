@@ -14,7 +14,8 @@ function RenderAppItem({item}){
     );
 }
 
-function Apps (props){    
+function Apps (props){
+
     const ourApps = props.apps.map(myApp => {
         return (
             <div key={myApp.id} className="col-md-5 m-1">
