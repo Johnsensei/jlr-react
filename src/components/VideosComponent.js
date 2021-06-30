@@ -5,14 +5,10 @@ import { CardMedia } from '@material-ui/core'
 function RenderVideoItem({item}){
     return(
         <Card>
-            {/* <CardImg src={item.image} alt={item.name} /> */}
-            {/* <video autoPlay="false">
-                <source src={item.video}/>
-            </video> */}
             <CardMedia 
                 component="iframe"
                 title="test"
-                height="280"
+                height="240"
                 muted="false"
                 src={item.video}
             />
