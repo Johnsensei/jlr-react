@@ -1,10 +1,21 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
+import { CardMedia } from '@material-ui/core'
 
-function RenderCard({item}){
+function RenderVideoItem({item}){
     return(
         <Card>
-            <CardImg src={item.image} alt={item.name} />
+            {/* <CardImg src={item.image} alt={item.name} /> */}
+            {/* <video autoPlay="false">
+                <source src={item.video}/>
+            </video> */}
+            <CardMedia 
+                component="iframe"
+                title="test"
+                height="280"
+                muted="false"
+                src={item.video}
+            />
             <CardBody>
                 <CardTitle>{item.name}</CardTitle>
                 <CardText>{item.description}</CardText>
@@ -13,22 +24,22 @@ function RenderCard({item}){
     );
 }
 
-function Home (props){
+function Videos(props){
+    const ourVideos = props.videos.map(item => {
+        return (
+            <div key={item.id} className="col-md-5 m-1">
+                <RenderVideoItem item={item} />
+            </div>
+        );
+    });
+
     return(
         <div className="container">
             <div className="row">
-                <div className="col-md m-1">
-                    <RenderCard item={props.languageClass} />
-                </div>
-                <div className="col-md m-1">
-                    <RenderCard item={props.app} />
-                </div>
-                <div className="col-md m-1">
-                    <RenderCard item={props.video} />
-                </div>
+                {ourVideos}
             </div>
         </div>
     );
 }
 
-export default Home;
+export default Videos;

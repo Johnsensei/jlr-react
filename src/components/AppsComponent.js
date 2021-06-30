@@ -16,10 +16,10 @@ function RenderAppItem({item}){
 
 function Apps (props){
 
-    const ourApps = props.apps.map(myApp => {
+    const ourApps = props.apps.map(item => {
         return (
-            <div key={myApp.id} className="col-md-5 m-1">
-                <RenderAppItem app={myApp} />
+            <div key={item.id} className="col-md-5 m-1">
+                <RenderAppItem item={item} />
             </div>
         );
     });

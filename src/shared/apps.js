@@ -9,7 +9,7 @@ export const APPS = [
     {
         id: 1,
         name: "Basic Japanese Numbers and Math",
-        image: "/assets/images/japanese-numbers.png",
+        image: "assets/images/japanese-numbers.png",
         featured: false,
         description: "Learn to count and do basic math in Japanese."
     }
