@@ -57,3 +57,7 @@ h1, h2, h3, .card-body>.card-title {
 .jumbotron h2 {
   color: #CEC8FF;
 }
+
+.google-btn{
+  float: left;
+}
