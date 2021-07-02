@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 
+// Note that this component isn't used in the project.
+//I'm just keeping it for reference for when I'm ready to code the <GoogleButton> logic.
 
 const CLIENT_ID = '<your Client ID>';
 

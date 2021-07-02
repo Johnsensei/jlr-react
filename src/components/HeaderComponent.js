@@ -1,18 +1,23 @@
 import React, { Component }  from 'react';
-import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron } from 'reactstrap';
+import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron,
+    Button, Modal, ModalHeader, ModalBody,
+    Form, FormGroup, Input, Label } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 // import GoogleBtn from './GoogleBtn';
 import GoogleButton from 'react-google-button'
+import RegistrationModal from './RegistrationModal';
 
 class Header extends Component{
 
     constructor(props) {
         super(props);
+        this.state = {
+          isNavOpen: false,
+          isModalOpen: false
+        };
 
         this.toggleNav = this.toggleNav.bind(this);
-        this.state = {
-          isNavOpen: false
-        };
+        this.toggleModal = this.toggleModal.bind(this);
     }
 
     toggleNav(){
@@ -21,6 +26,19 @@ class Header extends Component{
         });
     }
 
+    toggleModal(){
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
+        });
+    }
+
+    handleSubmit(event){
+        alert("Registered for class.");
+        this.toggleModal();
+        event.preventDefault();
+    }
+
+    
     render(){
         return(
             <React.Fragment>
@@ -30,6 +48,11 @@ class Header extends Component{
                             <div className="col">
                                 <img src="/assets/images/JLR_Horz.png" className="img-fluid"/>
                             </div>
+                            <span className="col navbar-text ml-auto">
+                                <Button onClick={this.toggleModal} className="btn btn-lg btn-block reg-button">
+                                    <i className="fa fa-sign-in fa-lg" /> Register for a Class!
+                                </Button>
+                            </span>
                         </div>
                     </div>
                 </Jumbotron>
@@ -73,6 +96,37 @@ class Header extends Component{
                             </Collapse>
                     </div>
                 </Navbar>
+
+                {/* <RegistrationModal isOpen={this.state.isModalOpen} toggle={this.state.toggleModal} toggleModal={this.state.toggleModal}/> */}
+                <Modal isOpen={this.state.isModalOpen} toggle={this.state.toggleModal}>
+                    <ModalHeader >Register for a Class</ModalHeader>
+                    <ModalBody>
+                    <Form onSubmit={this.handleSubmit}>
+                            <FormGroup>
+                                <Label htmlFor="availableClasses">Available Classes</Label>
+                                    <select id="availableClasses" name="availableClasses">
+                                            <option>Select...</option>
+                                            <option>Japanese 1.0</option>
+                                            <option>Japanese 1.1</option>
+                                            <option>Japanese 1.2</option>
+                                            <option>Japanese 1.3</option>
+                                        </select>
+                            </FormGroup>
+                            <FormGroup>
+                                <Label htmlFor="studentName">Student Name</Label>
+                                <Input type="text" id="studentName" name="studentName" placeholder="First Last" />
+                            </FormGroup>
+                            <FormGroup>
+                                <Label htmlFor="studentAge">Student Age</Label>
+                                <Input type="text" id="studentAge" name="studentAge" placeholder="Must be 18 or older." />
+                            </FormGroup>
+                            
+                            <Button type="submit" value="submit" color="primary">Register</Button>
+                        </Form>
+                    </ModalBody>
+                </Modal>
+
+
             </React.Fragment>
         );
     }
