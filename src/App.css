@@ -44,7 +44,7 @@ h1, h2, h3, .card-body>.card-title {
 
 .site-footer {
   background: #B9936D;
-  padding: 20px 0;
+  padding: 70px 0;
 }
 
 .jumbotron {
@@ -65,4 +65,24 @@ h1, h2, h3, .card-body>.card-title {
 .reg-button{
   background: #714F39;
   outline: #714F39;
+}
+
+.page-enter {
+  opacity: 0;
+  transform: translateX(-75%);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: 300ms ease-out;
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: 300ms ease-in;
 }

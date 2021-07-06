@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron,
-    Button, Modal, ModalHeader, ModalBody,
+import { Button, Modal, ModalHeader, ModalBody,
     Form, FormGroup, Input, Label } from 'reactstrap';
 
 class RegistrationModal extends Component {
-    constructor(props) {
-        super(props);
-
-    }
 
     handleSubmit(event){
         alert("Registered for class.");
@@ -23,8 +18,6 @@ class RegistrationModal extends Component {
                     <Form onSubmit={this.handleSubmit}>
                             <FormGroup>
                                 <Label htmlFor="availableClasses">Available Classes</Label>
-                                {/* <Input type="text" id="username" name="username"
-                                    innerRef={input => this.username = input} /> */}
                                     <select id="availableClasses" name="availableClasses">
                                             <option>Select...</option>
                                             <option>Japanese 1.0</option>

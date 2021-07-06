@@ -8,6 +8,7 @@ import Apps from './AppsComponent'
 import Videos from './VideosComponent'
 import Contact from './ContactComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { LANGUAGECLASSES } from '../shared/languageclasses';
 import { PREREQUISITES } from '../shared/prerequisites';
 import { APPS } from '../shared/apps';
@@ -45,19 +46,24 @@ class Main extends Component{
                 />
             );
         };
-
+        
         return (
             <div>
                 <Header />
-                <Switch>
-                    <Route path="/home" component={HomePage}/>
-                    <Route exact path="/languageclasses" render = {() => <Directory languageClasses={this.state.languageClasses} />} />
-                    <Route path="/languageclasses/:classId" component={ClassWithId} />
-                    <Route exact path="/apps" render = {() => <Apps apps={this.state.apps} />} />
-                    <Route exact path="/videos" render = {() => <Videos videos={this.state.videos} />} />
-                    <Route exact path="/contactus" component={Contact} />
-                    <Redirect to="/home" />
-                </Switch>
+                <TransitionGroup>
+                    {/* key={this.props.location.key} throws an error that this is undefined. */}
+                    <CSSTransition  key={this.props.location} classNames="page" timeout={300}>
+                        <Switch  >
+                            <Route path="/home" component={HomePage}/>
+                            <Route exact path="/languageclasses" render = {() => <Directory languageClasses={this.state.languageClasses} />} />
+                            <Route path="/languageclasses/:classId" component={ClassWithId} />
+                            <Route exact path="/apps" render = {() => <Apps apps={this.state.apps} />} />
+                            <Route exact path="/videos" render = {() => <Videos videos={this.state.videos} />} />
+                            <Route exact path="/contactus" component={Contact} />
+                            <Redirect to="/home" />
+                        </Switch>
+                    </CSSTransition>
+                </TransitionGroup>
                 <Footer />
             </div>
         );

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
-import { APPS } from '../shared/apps';
 
 function RenderAppItem({item}){
     return(

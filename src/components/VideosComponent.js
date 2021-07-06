@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
+import { Card, /*CardImg,*/ CardText, CardBody, CardTitle } from 'reactstrap';
 import { CardMedia } from '@material-ui/core'
 
 function RenderVideoItem({item}){
