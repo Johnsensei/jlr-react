@@ -110,10 +110,10 @@ class Header extends Component{
                 <Jumbotron fluid>
                     <div className="container">
                         <div className="row">
-                            <div className="col">
+                            <div className="col-sm-6 text-center text-sm-left">
                                 <img src="/assets/images/JLR_Horz.png" className="img-fluid" alt="logo"/>
                             </div>
-                            <span className="col navbar-text ml-auto">
+                            <span className="col-sm-6 navbar-text ">
                                 <Button onClick={this.toggleModal} className="btn btn-lg btn-block reg-button">
                                     <i className="fa fa-sign-in fa-lg" /> Register for a Class!
                                 </Button>
