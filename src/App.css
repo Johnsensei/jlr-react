@@ -86,3 +86,13 @@ h1, h2, h3, .card-body>.card-title {
   opacity: 0;
   transition: 300ms ease-in;
 }
+
+.video-wrapper {
+  height: auto;
+  width: auto;
+}
+
+.video-player{
+  padding-top: 56.25%;
+  position: relative;
+}
