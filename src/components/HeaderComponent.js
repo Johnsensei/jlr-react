@@ -3,8 +3,6 @@ import { Navbar, Nav, NavbarToggler, Collapse, NavItem, Jumbotron,
     Button, Modal, ModalHeader, ModalBody,
     Form, FormGroup, FormFeedback, Input, Label } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-//May still use this GoogleBtn logic.
-// import GoogleBtn from './GoogleBtn';
 import GoogleButton from 'react-google-button'
 // This import is because I want the RegistrationModal as a separate component.
 // import RegistrationModal from './RegistrationModal';
