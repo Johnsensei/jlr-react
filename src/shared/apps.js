@@ -4,7 +4,8 @@ export const APPS = [
         name: "Hiragana Breaker",
         image: "assets/images/hb-placeholder.png",
         featured: true,
-        description: "Don't just learn hiragana. Break them!"
+        description: "Don't just learn hiragana. Break them!",
+        video: "https://www.youtube.com/embed/l1KmWN3j5Z4"
     },
     {
         id: 1,
