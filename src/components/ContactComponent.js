@@ -88,7 +88,8 @@ class Contact extends Component {
             this.state.firstName,
             this.state.lastName,
             this.state.phoneNum,
-            this.state.email);
+            this.state.email
+        );
 
         return (
             <div className="container">

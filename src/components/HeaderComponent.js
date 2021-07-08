@@ -1,7 +1,7 @@
 import React, { Component }  from 'react';
 import { Navbar, Nav, NavbarToggler, Collapse, NavItem, Jumbotron,
     Button, Modal, ModalHeader, ModalBody,
-    Form, FormGroup, Input, Label } from 'reactstrap';
+    Form, FormGroup, FormFeedback, Input, Label } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 //May still use this GoogleBtn logic.
 // import GoogleBtn from './GoogleBtn';
@@ -15,11 +15,24 @@ class Header extends Component{
         super(props);
         this.state = {
           isNavOpen: false,
-          isModalOpen: false
+          isModalOpen: false,
+          studentName: "",
+          studentAge: "",
+          studentEmail: "",
+          touched: {
+            studentName: false,
+            studentAge: false,
+            studentEmail: false
+        }
         };
 
         this.toggleNav = this.toggleNav.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
+        this.validate = this.validate.bind(this);
+        // this.handleBlur = this.handleBlur.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+
     }
 
     toggleNav(){
@@ -34,14 +47,64 @@ class Header extends Component{
         });
     }
 
+    validate(studentName, studentAge, studentEmail){
+        const errors = {
+            studentName: '',
+            studentAge: '',
+            studentEmail: ''
+        };
+
+        if (this.state.touched.studentName) {
+            if (studentName.length < 2) {
+                errors.studentName = 'Please enter the student\'s name.';
+            }
+        }
+
+        if (this.state.touched.studentAge) {
+            if (+studentAge < 18) {
+                errors.studentAge = 'Student must be at least 18 years old to register.';
+            }
+        }
+        
+        if (this.state.touched.studentEmail && !studentEmail.includes('@')) {
+            errors.studentEmail = 'Email should contain a @';
+        }
+
+        return errors;
+    }
+
+    handleBlur = (field) => () => {
+        this.setState({
+            touched: {...this.state.touched, [field]: true}
+        });
+    }
+
+    handleInputChange(event){
+        const target = event.target;
+        const name = target.name;
+        const value = target.value;
+
+        this.setState({
+            [name]: value
+        });
+    }
+
     handleSubmit(event){
-        alert("Registered for class.");
+        alert("Registered for class: " + JSON.stringify(this.state));
         this.toggleModal();
         event.preventDefault();
     }
 
     
     render(){
+
+        const errors = this.validate(
+            this.state.studentName,
+            this.state.studentAge,
+            this.state.studentEmail
+        );
+
+
         return(
             <React.Fragment>
                 <Jumbotron fluid>
@@ -97,6 +160,7 @@ class Header extends Component{
                     </div>
                 </Navbar>
 
+                {/* Code for rendering the RegistrationModal after moving to own component: */}
                 {/* <RegistrationModal isOpen={this.state.isModalOpen} toggle={this.state.toggleModal} toggleModal={this.state.toggleModal}/> */}
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                     <ModalHeader toggle={this.toggleModal}>Register for a Class</ModalHeader>
@@ -114,7 +178,12 @@ class Header extends Component{
                             </FormGroup>
                             <FormGroup>
                                 <Label htmlFor="studentName">Student Name</Label>
-                                <Input type="text" id="studentName" name="studentName" placeholder="First Last" />
+                                <Input type="text" id="studentName" name="studentName" placeholder="First Last" 
+                                    value={this.state.studentName}
+                                    invalid={errors.studentNameName}
+                                    onBlur={this.handleBlur("studentName")}
+                                    onChange={this.handleInputChange} />
+                                <FormFeedback>{errors.studentName}</FormFeedback>
                             </FormGroup>
                             <FormGroup>
                                 {/* TODO: Add validation to student age. */}

@@ -5,7 +5,7 @@ function RenderCard({item}){
     return(
         <Card>
             <CardImg src={item.image} alt={item.name} />
-            {/* Some other element besides card image. */}
+            {/* Some other element besides card image. CardMedia */}
             <CardBody>
                 <CardTitle>{item.name}</CardTitle>
                 <CardText>{item.description}</CardText>
