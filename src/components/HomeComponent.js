@@ -25,7 +25,7 @@ function RenderCard({item}){
       src={item.video}
       frameBorder="0"
     />
-  </div>
+  </div>;
 
     return(
         <Card>
