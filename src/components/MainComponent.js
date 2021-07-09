@@ -8,7 +8,6 @@ import Apps from './AppsComponent'
 import Videos from './VideosComponent'
 import Contact from './ContactComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { LANGUAGECLASSES } from '../shared/languageclasses';
 import { PREREQUISITES } from '../shared/prerequisites';
 import { APPS } from '../shared/apps';
@@ -50,9 +49,6 @@ class Main extends Component{
         return (
             <div>
                 <Header />
-                <TransitionGroup>
-                    {/* key={this.props.location.key} throws an error that this is undefined. */}
-                    <CSSTransition  key={this.props.location} classNames="page" timeout={300}>
                         <Switch  >
                             <Route path="/home" component={HomePage}/>
                             <Route exact path="/languageclasses" render = {() => <Directory languageClasses={this.state.languageClasses} />} />
@@ -62,8 +58,6 @@ class Main extends Component{
                             <Route exact path="/contactus" component={Contact} />
                             <Redirect to="/home" />
                         </Switch>
-                    </CSSTransition>
-                </TransitionGroup>
                 <Footer />
             </div>
         );

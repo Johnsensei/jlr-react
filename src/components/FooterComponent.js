@@ -18,10 +18,10 @@ function Footer (props){
                     </div>
                     <div className="col-6 col-sm-3 text-center">
                         <h5>Social</h5>
-                        <a className="btn btn-social-icon btn-facebook" href="https://www.facebook.com/JLangRoom"><i className="fa fa-facebook" /></a>{' '}
-                        <a className="btn btn-social-icon btn-twitter" href="https://twitter.com/JLangRoom"><i className="fa fa-twitter" /></a>{' '}
-                        <a className="btn btn-social-icon btn-instagram" href="https://www.instagram.com/jlangroom/"><i className="fa fa-instagram" /></a>{' '}
-                        <a className="btn btn-social-icon btn-google" href="https://www.youtube.com/channel/UCoenwSV-YumZjZzmEAOc4ew"><i className="fa fa-youtube" /></a> 
+                        <a className="btn btn-social-icon btn-facebook" href="https://www.facebook.com/JLangRoom" target="_blank"><i className="fa fa-facebook" /></a>{' '}
+                        <a className="btn btn-social-icon btn-twitter" href="https://twitter.com/JLangRoom" target="_blank"><i className="fa fa-twitter" /></a>{' '}
+                        <a className="btn btn-social-icon btn-instagram" href="https://www.instagram.com/jlangroom/" target="_blank"><i className="fa fa-instagram" /></a>{' '}
+                        <a className="btn btn-social-icon btn-google" href="https://www.youtube.com/channel/UCoenwSV-YumZjZzmEAOc4ew" target="_blank"><i className="fa fa-youtube" /></a> 
                     </div>
                     <div className="col-sm-4 text-center">
                         <a role="button" className="btn btn-link" href="tel:+16155551234"><i className="fa fa-phone" /> 1-615-555-1234</a><br />

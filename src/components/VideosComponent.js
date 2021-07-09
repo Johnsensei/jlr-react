@@ -21,6 +21,7 @@ function RenderVideoItem({item}){
       }}
       src={item.video}
       frameBorder="0"
+      alt={item.name}
     />
   </div>;
     
