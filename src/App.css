@@ -12,6 +12,9 @@
 
 body {
   font-family: "Open Sans", sans-serif;
+  /* min-height: 100vh;
+  display: flex;
+  flex-direction: column; */
   /*Colorset 1*/
   /* background: #E7ECF2; */
 
@@ -41,14 +44,13 @@ h1, h2, h3, .card-body>.card-title {
   border-bottom: 1px ridge;
   min-height: 200px;
 }
+/* .content-container {
+  min-height: calc(100vh - 188px);
+} */
 
 .site-footer {
-  background: #B9936D;
-  padding: 10px 0;
-  position:absolute;
-  left:0;
-  bottom:0;
-  right:0;
+  padding: 10px;
+  background-image: linear-gradient(#B9936D, #E6DFD7);
 }
 
 .jumbotron {
