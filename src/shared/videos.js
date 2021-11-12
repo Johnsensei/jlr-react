@@ -1,18 +1,18 @@
 export const VIDEOS = [
     {
         id: 0,
-        name: "Japanese Linguistics Taught in English 1",
+        name: "Kosenda-sensei Lingustics Video",
         image: "assets/images/japanese-linguistics.png",
         video: "https://www.youtube.com/embed/gBq25pTaNIo",
         featured: true,
-        description: "Hiragana phonetics - Part 1"
+        description: "Rendaku - Part 1"
     },
     {
         id: 1,
-        name: "Japanese Linguistics Taught in English 2",
+        name: "Kosenda-sensei Lingustics Video",
         image: "assets/images/japanese-linguistics.png",
         video: "https://www.youtube.com/embed/gWynAltu12Q",
         featured: false,
-        description: "Hiragana phonetics - Part 2"
+        description: "Rendaku - Part 2"
     }
 ];
